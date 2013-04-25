@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 25/04/2013 05:04:33 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="lab.arq.hb.geo.Pais" table="pais" schema="public">
+        <id name="PId" type="string">
+            <column name="p_id" length="3" />
+            <generator class="assigned" />
+        </id>
+        <property name="PNombre" type="string">
+            <column name="p_nombre" length="25" />
+        </property>
+        <set name="ciudads" inverse="true">
+            <key>
+                <column name="p_id" length="3" />
+            </key>
+            <one-to-many class="lab.arq.hb.geo.Ciudad" />
+        </set>
+    </class>
+</hibernate-mapping>

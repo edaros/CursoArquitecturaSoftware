@@ -7,5 +7,9 @@
     <property name="hibernate.connection.url">jdbc:postgresql://localhost:5432/udea_arquitectura_lab4</property>
     <property name="hibernate.connection.username">postgres</property>
     <property name="hibernate.connection.password">postgres</property>
+    <property name="hibernate.current_session_context_class">thread</property>
+    <property name="hibernate.show_sql">true</property>
+    <mapping resource="lab/arq/hb/geo/Pais.hbm.xml"/>
+    <mapping resource="lab/arq/hb/geo/Ciudad.hbm.xml"/>
   </session-factory>
 </hibernate-configuration>
