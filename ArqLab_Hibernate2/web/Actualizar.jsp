@@ -10,14 +10,15 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-            <title>Crear empresa</title>
+            <title>Actualizar empresa </title>
     </head>
     <body>
         <%
             Empresas emp = new Empresas();
             EmpresasController empController = new EmpresasController();
-            if (empController.updateEmpresa(request.getParameter("emp_rut"),
-                    request.getParameter("emp_nombre")) != null) {
+            emp = empController.updateEmpresa(request.getParameter("emp_rut"),
+                    request.getParameter("emp_nombre"));
+            if ( emp != null) {
                 out.println("<h1>Creada empresa con datos</h1>");
                 out.println("<table border=10 cellpading=5><tr>");
                 out.println("<td>RUT</td><td>Nombre</td><td>Dirección</td></tr>");

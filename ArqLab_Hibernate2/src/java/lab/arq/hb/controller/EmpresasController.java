@@ -66,4 +66,25 @@ public class EmpresasController {
             return null;
         }
     }
+    
+    public boolean removeEmpresa(String rut){
+        try {
+            this.session = LabHbUtils.getSessionFactory().getCurrentSession();
+            this.session.beginTransaction();
+            Empresas emp = null;
+            Query queryRut = this.session.createQuery("from Empresas as empresa where empresa.rut = '" + rut + "'");
+            if (queryRut.list().size() == 1) {
+                emp = (Empresas) queryRut.list().get(0);                
+                this.session.delete(emp);
+                this.session.getTransaction().commit();
+                return true;
+            }else{
+                return false;
+            }
+
+        } catch (Exception ex) {
+            ex.printStackTrace();
+            return false;
+        }
+    }
 }
