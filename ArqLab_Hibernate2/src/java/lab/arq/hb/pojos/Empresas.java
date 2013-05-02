@@ -1,4 +1,4 @@
-package lab.arq.hb;
+package lab.arq.hb.pojos;
 // Generated 2/05/2013 04:30:43 PM by Hibernate Tools 3.2.1.GA
 
 
