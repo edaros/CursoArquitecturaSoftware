@@ -17,7 +17,7 @@
         <form action="Crear.jsp" method="post">
             <ul><li>Nombre:<input type="text" name="emp_nombre"/></li>
             <li>RUT:<input type="text" name="emp_rut"/></li>
-            <li>Dirección:<input type="text" name="emp_direccion "/></li>
+            <li>Dirección:<input type="text" name="emp_direccion"/></li>
             </ul>
             <input type="submit" value="Guardar"/>
         </form>
