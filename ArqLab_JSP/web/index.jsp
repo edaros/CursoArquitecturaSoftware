@@ -26,7 +26,7 @@
         //try {
         // empezando a construir una tabla html
                     out.println("<TABLE Border=10 CellPadding=5><TR>");
-                    out.println("<th bgcolor=Green>CLAVE</th><th bgcolor=White>NOMBRE</th><thbgcolor=Red>EDAD</th></TR>");
+                    out.println("<th bgcolor=Green>CLAVE</th><th bgcolor=White>NOMBRE</th><th bgcolor=Red>EDAD</th></TR>");
         // mandando resultset a una tabla html
         // y ciclo de lectura del resultset
                     tabla = instruccion.executeQuery("select * from mitabla");
