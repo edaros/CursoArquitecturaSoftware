@@ -1,0 +1,26 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+    <h:head>
+        <title>Movie List</title>
+    </h:head>
+    <h:body>
+        We just got some few movies in this list
+    </h:body>
+    <h:form>
+        <h:dataTable value="#{movieSessionBean.movies}" var="m">
+            <h:column><f:facet name="header">Name</f:facet>
+                #{m.name}
+            </h:column>
+            <h:column><f:facet name="header">Year</f:facet>
+                #{m.year}
+            </h:column>
+            <h:column><f:facet name="header">Language</f:facet>
+                #{m.language}
+            </h:column>
+        </h:dataTable>
+    </h:form>
+</html>
+
