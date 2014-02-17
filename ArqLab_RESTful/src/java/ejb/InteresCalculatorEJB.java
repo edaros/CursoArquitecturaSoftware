@@ -33,7 +33,9 @@ public class InteresCalculatorEJB {
     }
 
     private String calcularValorCouta(double interes, int plazo, int valor){
-           return Double.toString(valor * Math.pow(1 + interes, plazo)) ;
+           Double cuota = (valor*(interes/12))/(1- Math.pow(1+(interes/12),-plazo*12));
+           return Double.toString(cuota);
+          
     }
 
 }
