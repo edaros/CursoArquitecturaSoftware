@@ -17,6 +17,20 @@ public interface MovieSessionBeanLocal {
     
  public abstract void createMovie();
  
+ public abstract void createMovie(Movie m);
+ 
  public abstract List<Movie> getMovies();
-    
+ 
+ public abstract List<Movie> findMovies();
+ 
+public abstract void delete(Movie m);
+
+public abstract void edit(Movie m);
+
+public abstract boolean isEdit();
+
+public abstract void save();
+
+public abstract Movie getEditingMovie();
+
 }
