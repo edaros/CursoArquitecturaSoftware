@@ -11,12 +11,6 @@
         </file>
     </editor-bookmarks>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group>
-            <file>file:/home/sortiz/Dropbox/2013-1/Arquitectura/Laboratorios/ArgLab_RESTful/src/java/service/InteresCalculatorTest.java</file>
-            <file>file:/home/sortiz/Dropbox/2013-1/Arquitectura/Laboratorios/ArgLab_RESTful/src/java/service/ManufacturerFacadeREST.java</file>
-            <file>file:/home/sortiz/Dropbox/2013-1/Arquitectura/Laboratorios/ArgLab_RESTful/src/java/entity/TasaInteres.java</file>
-            <file>file:/home/sortiz/Dropbox/2013-1/Arquitectura/Laboratorios/ArgLab_RESTful/src/java/ejb/InteresCalculatorEJB.java</file>
-            <file>file:/home/sortiz/Dropbox/2013-1/Arquitectura/Laboratorios/ArgLab_RESTful/src/java/entity/Manufacturer.java</file>
-        </group>
+        <group/>
     </open-files>
 </project-private>

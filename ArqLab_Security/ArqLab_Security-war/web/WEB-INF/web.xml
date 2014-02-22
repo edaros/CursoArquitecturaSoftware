@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
+    <servlet>
+        <servlet-name>DepositoServlet</servlet-name>
+        <servlet-class>arqlab.servlets.DepositoServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>BalanceServlet</servlet-name>
+        <servlet-class>arqlab.servlets.BalanceServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>CloseServlet</servlet-name>
+        <servlet-class>arqlab.servlets.CloseServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>DepositoServlet</servlet-name>
+        <url-pattern>/DepositoServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>BalanceServlet</servlet-name>
+        <url-pattern>/BalanceServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>CloseServlet</servlet-name>
+        <url-pattern>/CloseServlet</url-pattern>
+    </servlet-mapping>
+    <session-config>
+        <session-timeout>
+            30
+        </session-timeout>
+    </session-config>
+    <welcome-file-list>
+        <welcome-file>index.jsp</welcome-file>
+    </welcome-file-list>
+    <error-page>
+        <error-code>403</error-code>
+        <location>/AccessDenied.jsp</location>
+    </error-page>
+    <security-constraint>
+        <display-name>AccesoBalance</display-name>
+        <web-resource-collection>
+            <web-resource-name>Balance</web-resource-name>
+            <description>Acceder al balance de la cuenta</description>
+            <url-pattern>/BalanceServlet</url-pattern>
+        </web-resource-collection>
+        <auth-constraint>
+            <description>Acceso a autenticado</description>
+            <role-name>users</role-name>
+            <role-name>admin</role-name>
+            <role-name>guests</role-name>
+        </auth-constraint>
+    </security-constraint>
+    <security-constraint>
+        <display-name>AccesoDéposito</display-name>
+        <web-resource-collection>
+            <web-resource-name>Déposito</web-resource-name>
+            <description>Acceso a depositar a cuentas</description>
+            <url-pattern>/DepositoServlet</url-pattern>
+        </web-resource-collection>
+        <auth-constraint>
+            <description>Acceso con cuentas de usuario</description>
+            <role-name>users</role-name>
+        </auth-constraint>
+    </security-constraint>
+    <security-constraint>
+        <display-name>AccesoCerrar</display-name>
+        <web-resource-collection>
+            <web-resource-name>Cerrar</web-resource-name>
+            <description>Cerrar una cuenta</description>
+            <url-pattern>/CloseServlet</url-pattern>
+        </web-resource-collection>
+        <auth-constraint>
+            <description>Acceso para cerrar una cuenta</description>
+            <role-name>admin</role-name>
+        </auth-constraint>
+    </security-constraint>
+    <login-config>
+        <auth-method>BASIC</auth-method>
+        <realm-name>file</realm-name>
+    </login-config>
+    <security-role>
+        <description/>
+        <role-name>users</role-name>
+    </security-role>
+    <security-role>
+        <description/>
+        <role-name>admin</role-name>
+    </security-role>
+    <security-role>
+        <description/>
+        <role-name>guests</role-name>
+    </security-role>
+</web-app>
